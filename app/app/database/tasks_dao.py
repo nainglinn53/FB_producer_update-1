@@ -183,7 +183,7 @@ def get_sources_ready_to_sent():
 
 def get_tasks_query():
     now = datetime.now()
-    two_days_ago = now - timedelta(days=2)
+    two_days_ago = now - timedelta(days=1)
 
     # Get count of new tasks with status NULL
     #none_count = db.session.query(Task).filter(Task.status.is_(None)).count()
@@ -281,7 +281,7 @@ def subtasks_query(subtask_type):
 
 def task_ready_to_send_condition_repeat_send():
     now = datetime.now()
-    two_days_ago = now - timedelta(days=2)
+    two_days_ago = now - timedelta(days=1)
 
     return text(
         "(tasks.received_time is not Null) "
